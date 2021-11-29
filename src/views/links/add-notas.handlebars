@@ -1,0 +1,32 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/links/add-notas" method="POST">
+                        <div class="form-group p-2">
+                            <input type="text" name="titulo" class="form-control" placeholder="Tííítulo" autofocus>
+                        </div>                         
+                        <div class="form-group p-2">
+                            <input type= "text" name="imagen" class="form-control" placeholder="Path de Imagen"  >
+                        </div>
+                        <div class="form-group p-2">
+                            <textarea name="body"  class="form-control" placeholder="Body"></textarea>
+                        </div>
+                        <div class="form-group p-2">
+                            <select name="users_id"  class="form-select" placeholder="Usuario">{{{link.sel1}}}</select>
+                        </div>
+                        <div class="form-group p-2">
+                            <select  name="titulo_seccion"  class="form-select" placeholder="Seccion">{{{link.sel}}}</select>
+                        </div>
+                        <div class="form-group p-2 text-center">
+                            <button class="btn btn-success btn-block">
+                                Save
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
