@@ -67,9 +67,9 @@ router.post('/add-seccion', async(req, res) => {
 
 
 router.post('/add-notas', async(req, res) => {
-    const { titulo, imagen, body, users_id, titulo_seccion, } = req.body;
+    const { titulo, imagen, body, users_id, titulo_seccion, sumary } = req.body;
     const newNota = {
-        titulo, imagen, body, users_id, titulo_seccion
+        titulo, imagen, body, users_id, titulo_seccion, sumary
     };
     await pool.query('INSERT INTO contenidos set ?', [newNota]);
     res.render("links/add-notas");
@@ -92,6 +92,13 @@ router.get('/detalle/:id', async (req, res) => {
     const dataDetalle = await pool.query('SELECT * FROM contenidos WHERE id_cont = ?', [id]);
     console.log(id);
     res.send(dataDetalle);
+})
+
+router.get('/home', async (req, res) => {
+    const { id } = req.params;
+    const dataHome = await pool.query('SELECT * FROM contenidos',);
+    //console.log(iconsoled);
+    res.send(dataHome);
 })
 
 
